@@ -1,0 +1,9 @@
+.video-container {
+    display: flex;
+    justify-content: center;
+}
+
+.show-vid-dimensions {
+    width: 1000px;
+    height: 563px;
+}

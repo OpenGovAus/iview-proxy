@@ -1,4 +1,82 @@
+@font-face {
+    font-family: 'dinpro';
+    src: url('/font/dinpro-light.otf');
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: 'dinpro-bold';
+    src: url('/font/dinpro-bold.otf');
+    font-weight: bold;
+}
+
+@font-face {
+    font-family: 'dinpro-black';
+    src: url('/font/dinpro-black.otf');
+    font-weight: bolder;
+}
+
 * {
     padding: 0;
     margin: 0;
+    transition: all 0.2s ease;
+}
+
+*,*:focus,*:hover{
+    outline:none;
+}
+
+body {
+    background-color: rgb(20,20,20);
+}
+
+
+h1 {
+    font-size: 250%;
+    margin: 1%;
+}
+
+a {
+    text-decoration: none;
+    color: #23ddd9;
+    font-family: dinpro;
+}
+
+h1 a {
+    font-family: dinpro-black;
+}
+
+.searchresponse {
+    margin: 2%;
+}
+
+a:hover {
+    color: rgb(28, 181, 241);
+}
+
+input {
+    font-family: dinpro;
+    padding: 1% 20%;
+    text-align: center;
+    margin-top: 10%;
+}
+
+.search-container {
+    display:flex;
+    width: 100%;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.search {
+    width: 100%;
+    justify-content: center;
+    display: flex;
+}
+
+.search-response {
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
 }
