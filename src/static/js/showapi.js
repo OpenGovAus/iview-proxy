@@ -26,8 +26,6 @@ if($('meta[name=progtype]').attr('content') == 'show') {  // auth for the m3u8 i
                                 `<video id="show-vid" class="video-js vjs-default-skin" controls>
                                     <source src="${m3u8}" type="application/x-mpegURL">
                                 </video>
-                                <script src="https://cdnjs.cloudflare.com/ajax/libs/videojs-contrib-hls/5.14.1/videojs-contrib-hls.js"></script>
-                                <script src="https://vjs.zencdn.net/7.2.3/video.js"></script>
                                 <script>
                                 var player = videojs('show-vid');
                                 player.src({
