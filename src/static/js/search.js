@@ -20,7 +20,6 @@ function callSearch(text) {
             jsonReturn = jsonReturn.filter((item) => item.docType == 'VideoEpisode')
             for(var i = 0; i < jsonReturn.length; i++) {
                 $('.searchresponse').append(`<p><a href="/show?id=${jsonReturn[i].id}">${jsonReturn[i].title}</a></p>`)
-                }
             }
         }
     }
