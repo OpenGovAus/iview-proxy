@@ -16,10 +16,24 @@ if($('meta[name=progtype]').attr('content') == 'show') {  // auth for the m3u8 i
                     {
                         if(formats[i].type == 'program') {
                             if('720' in formats[i].streams.hls) {
-                                var m3u8 = formats[i].streams.hls['720'] + `&hdnea=${token}`
+                                if(formats[i].streams.hls['720'].slice(-1) == '8')
+                                {
+                                    _queryChar = '?'
+                                }
+                                else {
+                                    _queryChar = '&'
+                                }
+                                var m3u8 = formats[i].streams.hls['720'] + `${_queryChar}hdnea=${token}`
                             }
                             else {
-                                var m3u8 = formats[i].streams.hls.sd + `&hdnea=${token}`
+                                if(formats[i].streams.hls.sd.slice(-1) == '8')
+                                {
+                                    _queryChar = '?'
+                                }
+                                else {
+                                    _queryChar = '&'
+                                }
+                                var m3u8 = formats[i].streams.hls.sd + `${_queryChar}hdnea=${token}`
                             }
                             console.log(m3u8)
                             $('.video-container').html(
