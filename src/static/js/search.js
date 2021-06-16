@@ -16,8 +16,9 @@ function callSearch(text) {
             // filter response results, dont include anything without an id or a title
             jsonReturn = jsonReturn.filter((item) => typeof item.id !== 'undefined')
             jsonReturn = jsonReturn.filter((item) => typeof item.title !== 'undefined')
-            // dont include anything that isnt a 'VideoEpisode'
-            jsonReturn = jsonReturn.filter((item) => item.docType == 'VideoEpisode')
+            // Only get series/episodes
+            filters = [{label: 'docType', value: 'Program'}, {label: 'docType', value: 'VideoEpisode'}]
+            jsonReturn = jsonReturn.filter(candidate => candidate.docType == 'Program' || candidate.docType == 'VideoEpisode')
             for(var i = 0; i < jsonReturn.length; i++) {
                 $('.searchresponse').append(`<p><a href="/show?id=${jsonReturn[i].id}">${jsonReturn[i].title}</a></p>`)
             }
