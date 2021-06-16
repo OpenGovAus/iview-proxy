@@ -15,6 +15,8 @@ if($('meta[name=progtype]').attr('content') == 'show') {  // auth for the m3u8 i
                 apiJson = JSON.parse(getIDXhr.response)
                 if(apiJson.unavailableMessage == 'This program is not currently available in iview. You might like similar programs to this, shown below. Learn more in iview Support.') {
                     $('.video-container').html('<h3 class="removed-msg">This show appears to have been removed from iView.</h3>')
+                } else {
+                    window.location = `/show?id=${apiJson._embedded.highlightVideo.id}`
                 }
             }
         }
