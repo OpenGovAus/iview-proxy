@@ -12,12 +12,14 @@ function callSearch(text) {
     var xhr = new XMLHttpRequest();
     xhr.onreadystatechange = function() {
         if (xhr.readyState == XMLHttpRequest.DONE) {
-            var jsonReturn = JSON.parse(xhr.response).results[0].hits
+            let jsonReturn = JSON.parse(xhr.response).results[0].hits
+            // filter response results, dont include anything without an id or a title
+            jsonReturn = jsonReturn.filter((item) => typeof item.id !== 'undefined')
+            jsonReturn = jsonReturn.filter((item) => typeof item.title !== 'undefined')
+            // dont include anything that isnt a 'VideoEpisode'
+            jsonReturn = jsonReturn.filter((item) => item.docType == 'VideoEpisode')
             for(var i = 0; i < jsonReturn.length; i++) {
-                var title = jsonReturn[i].title
-                if(title != 'undefined') {
-                    $('.searchresponse').append(`<p><a href="/show?id=${jsonReturn[i].id}">${title}</a></p>`)
-                }
+                $('.searchresponse').append(`<p><a href="/show?id=${jsonReturn[i].id}">${jsonReturn[i].title}</a></p>`)
             }
         }
     }
@@ -26,7 +28,8 @@ function callSearch(text) {
         "requests": [
             {
                 "indexName": "ABC_production_iview_web",
-                "params": "query=" + text
+                "params": "query=" + text,
+                "hitsPerPage": 25
             }
         ]
     }));
