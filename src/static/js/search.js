@@ -14,6 +14,9 @@ function callSearch(text) {
         if (xhr.readyState == XMLHttpRequest.DONE) {
             var jsonReturn = JSON.parse(xhr.response).results[0].hits
             for(var i = 0; i < jsonReturn.length; i++) {
+                // skip episodes that dont contain an id
+                if (typeof jsonReturn[i].id === "undefined")
+                    continue
                 var title = jsonReturn[i].title
                 if(title != 'undefined') {
                     $('.searchresponse').append(`<p><a href="/show?id=${jsonReturn[i].id}">${title}</a></p>`)
