@@ -26,8 +26,17 @@ function callSearch(text, page, fromLoadMore) {
             filters = [{label: 'docType', value: 'Program'}, {label: 'docType', value: 'VideoEpisode'}]
             jsonReturn = jsonReturn.filter(candidate => candidate.docType == 'Program' || candidate.docType == 'VideoEpisode')
             for(var i = 0; i < jsonReturn.length; i++) {
-                $('.searchresponse').append(`<p><a href="/show?id=${jsonReturn[i].id}">${jsonReturn[i].title}</a></p>`)
+                $('.searchresponse').append(`<p class="result"><a href="/show?id=${jsonReturn[i].id}">${jsonReturn[i].title}</a></p>`)
             }
+            var titleList = []
+            $('.searchresponse').children().each( function() {
+                if(titleList.includes($(this).text())) {
+                    $(this).remove()
+                }
+                else {
+                    titleList.push($(this).text())
+                }
+            })
             globalPage++
             $('.searchresponse').append(`<button id="loadMore" onclick="callSearch(\'${text}\', ${globalPage}, true);">Load more</button>`)
         }
