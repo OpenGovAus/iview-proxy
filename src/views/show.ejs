@@ -16,9 +16,9 @@
         <% if(notExists == true) { %>
             <p>Show/series not found.</p>
         <% } else { %>
+            <div class="video-container"></div>
             <% if(progtype == 'show') {%>
                 <script src="/js/videojs/video.min.js"></script>
-                <div class="video-container"></div>
             <% }else { %>
                 <div class="episode-list"></div>
             <% } %>

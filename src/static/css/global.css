@@ -61,6 +61,12 @@ input {
     margin-top: 10%;
 }
 
+.removed-msg {
+    font-family: dinpro-bold;
+    color: rgb(25, 122, 187);
+    font-size: 200%;
+}
+
 .search-container {
     display:flex;
     width: 100%;
