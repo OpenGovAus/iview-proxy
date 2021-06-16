@@ -13,14 +13,13 @@ function callSearch(text) {
     xhr.onreadystatechange = function() {
         if (xhr.readyState == XMLHttpRequest.DONE) {
             var jsonReturn = JSON.parse(xhr.response).results[0].hits
-            // filter response results, dont include anything without an id
+            // filter response results, dont include anything without an id or a title
             jsonReturn = jsonReturn.filter((item) => typeof item.id !== 'undefined')
+            jsonReturn = jsonReturn.filter((item) => typeof item.title !== 'undefined')
             // dont include anything that isnt a 'VideoEpisode'
             jsonReturn = jsonReturn.filter((item) => item.docType == 'VideoEpisode')
             for(var i = 0; i < jsonReturn.length; i++) {
-                var title = jsonReturn[i].title
-                if(title != 'undefined') {
-                    $('.searchresponse').append(`<p><a href="/show?id=${jsonReturn[i].id}">${title}</a></p>`)
+                $('.searchresponse').append(`<p><a href="/show?id=${jsonReturn[i].id}">${jsonReturn[i].title}</a></p>`)
                 }
             }
         }
