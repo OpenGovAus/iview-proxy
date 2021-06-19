@@ -2,6 +2,8 @@
 
 A proxy web app that serves ABC iView content outside of the iView webplayer, avoiding intrusive data harvesting.
 
+There's also a cool Android fork located [here](https://github.com/kaputnikGo/AndIViewProxy).
+
 ## Purpose
 
 This project has two main goals:
@@ -48,6 +50,26 @@ So `iview-proxy` disables it all, and locks down iView's search to the bare-mini
 When you watch a video on the normal iView site, all sorts of data is sent back to iView and third parties, which is concerning to those who care about their privacy. See [here](https://github.com/AusOpenTech/ABCData/).
 
 `iview-proxy` calls only show/series metadata APIs to get the video info, and acts as if it is a web scraper of sorts. Once it has the video source for a show, it plays it in a non-custom `video.js` player, completely free of any analytics tracking.
+
+## Node JS
+
+1. Download and install Node JS from [here](https://nodejs.org/en/)
+
+2. Verify its installation by opening a terminal (or CMD/PowerShell for Windows users), and run this command:
+
+	```sh
+	node
+	```
+
+	You should enter the Node JS interpreter.
+	
+	Type
+	
+	```sh
+	.exit
+	```
+
+	to leave.
 
 ## Setup
 
