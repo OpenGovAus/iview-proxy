@@ -4,6 +4,11 @@ A proxy web app that serves ABC iView content outside of the iView webplayer, av
 
 There's also a cool Android fork located [here](https://github.com/kaputnikGo/AndIViewProxy).
 
+
+#### Notes
+
+- Privacy Badger blocks the playback URL of ABC iView video playlists because of cross-origin playback, so whitelist that URL when it's flagged otherwise videos will refuse to play.
+
 ## Purpose
 
 This project has two main goals:
