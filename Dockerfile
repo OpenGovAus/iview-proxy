@@ -2,7 +2,7 @@ FROM node:16-slim
 
 WORKDIR /usr/src/app
 
-COPY . .
+COPY src/* ./
 
 RUN npm install
 
