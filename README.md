@@ -99,3 +99,19 @@ The actual app is contained in the `src` directory.
     ```
 
 3. Navigate to `localhost:1984` in a browser to access the app.
+
+## Docker
+
+1. Build the docker image:
+
+    ```sh
+    cd src
+    docker build -t iview-proxy .
+    ```
+
+2. Start a container with that image
+    ```sh
+    docker run --rm -it -p 1984:1984 iview-proxy
+    ```
+
+3. Navigate to `localhost:1984` in a browser to access the app.
