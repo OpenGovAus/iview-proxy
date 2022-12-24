@@ -1,3 +1,11 @@
+# Discontinued
+
+**This project doesn't work anymore (if you're using a browser with proper CORS)**
+
+**The ABC fixed their CORS policy. Use a server-side application instead ;)**
+
+## Old readme
+```
 # iview-proxy
 
 A proxy web app that serves ABC iView content outside of the iView webplayer, avoiding intrusive data harvesting.
@@ -80,13 +88,7 @@ When you watch a video on the normal iView site, all sorts of data is sent back 
 
 The actual app is contained in the `src` directory.
 
-1. Install required dependencies
-
-    ```sh
-    npm install
-    ```
-
-2. Start the server
+1. Start the server
 
     ```sh
     npm start
@@ -115,3 +117,4 @@ The actual app is contained in the `src` directory.
     ```
 
 3. Navigate to `localhost:1984` in a browser to access the app.
+```
