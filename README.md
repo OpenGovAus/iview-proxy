@@ -33,28 +33,28 @@ Despite being aptly warned, the ABC has taken a forceful approach to collecting 
 
 The search function on iView is riddled with analytics tracking:
 
-```json
-{
-	"requests": [
-		{
-			"indexName": "ABC_production_iview_web",
-			"params": "highlightPreTag=%3Cais-highlight-0000000000%3E&highlightPostTag=%3C%2Fais-highlight-0000000000%3E&getRankingInfo=true&clickAnalytics=true&analytics=true&userToken=anonymous-60451354-4525-401b-9a54-3e18fa480cd5&facetFilters=playable%3A%20-false&query=s&facets=%5B%5D&tagFilters="
-		},
-		{
-			"indexName": "ABC_production_iview_web",
-			"params": "highlightPreTag=%3Cais-highlight-0000000000%3E&highlightPostTag=%3C%2Fais-highlight-0000000000%3E&getRankingInfo=true&clickAnalytics=true&analytics=true&userToken=anonymous-60451354-4525-401b-9a54-3e18fa480cd5&facetFilters=playable%3A%20-false&query=s&hitsPerPage=6&filters=docType%3A%20category%20OR%20docType%3A%20channel&ruleContexts=iview_categories&facets=%5B%5D&tagFilters="
-		},
-		{
-			"indexName": "ABC_production_iview_web",
-			"params": "highlightPreTag=%3Cais-highlight-0000000000%3E&highlightPostTag=%3C%2Fais-highlight-0000000000%3E&getRankingInfo=true&clickAnalytics=true&analytics=true&userToken=anonymous-60451354-4525-401b-9a54-3e18fa480cd5&facetFilters=playable%3A%20-false&query=s&hitsPerPage=8&filters=docType%3A%20Program&ruleContexts=iview_programs&page=0&facets=%5B%5D&tagFilters="
-		},
-		{
-			"indexName": "ABC_production_iview_web",
-			"params": "highlightPreTag=%3Cais-highlight-0000000000%3E&highlightPostTag=%3C%2Fais-highlight-0000000000%3E&getRankingInfo=true&clickAnalytics=true&analytics=true&userToken=anonymous-60451354-4525-401b-9a54-3e18fa480cd5&facetFilters=playable%3A%20-false&query=s&hitsPerPage=8&filters=docType%3A%20VideoEpisode%20AND%20NOT%20subType%3A%20feature%20AND%20NOT%20subType%3A%20livestream&ruleContexts=iview_episodes&page=0&facets=%5B%5D&tagFilters="
-		}
-	]
-}
-```
+	```json
+	{
+		"requests": [
+			{
+				"indexName": "ABC_production_iview_web",
+				"params": "highlightPreTag=%3Cais-highlight-0000000000%3E&highlightPostTag=%3C%2Fais-highlight-0000000000%3E&getRankingInfo=true&clickAnalytics=true&analytics=true&userToken=anonymous-60451354-4525-401b-9a54-3e18fa480cd5&facetFilters=playable%3A%20-false&query=s&facets=%5B%5D&tagFilters="
+			},
+			{
+				"indexName": "ABC_production_iview_web",
+				"params": "highlightPreTag=%3Cais-highlight-0000000000%3E&highlightPostTag=%3C%2Fais-highlight-0000000000%3E&getRankingInfo=true&clickAnalytics=true&analytics=true&userToken=anonymous-60451354-4525-401b-9a54-3e18fa480cd5&facetFilters=playable%3A%20-false&query=s&hitsPerPage=6&filters=docType%3A%20category%20OR%20docType%3A%20channel&ruleContexts=iview_categories&facets=%5B%5D&tagFilters="
+			},
+			{
+				"indexName": "ABC_production_iview_web",
+				"params": "highlightPreTag=%3Cais-highlight-0000000000%3E&highlightPostTag=%3C%2Fais-highlight-0000000000%3E&getRankingInfo=true&clickAnalytics=true&analytics=true&userToken=anonymous-60451354-4525-401b-9a54-3e18fa480cd5&facetFilters=playable%3A%20-false&query=s&hitsPerPage=8&filters=docType%3A%20Program&ruleContexts=iview_programs&page=0&facets=%5B%5D&tagFilters="
+			},
+			{
+				"indexName": "ABC_production_iview_web",
+				"params": "highlightPreTag=%3Cais-highlight-0000000000%3E&highlightPostTag=%3C%2Fais-highlight-0000000000%3E&getRankingInfo=true&clickAnalytics=true&analytics=true&userToken=anonymous-60451354-4525-401b-9a54-3e18fa480cd5&facetFilters=playable%3A%20-false&query=s&hitsPerPage=8&filters=docType%3A%20VideoEpisode%20AND%20NOT%20subType%3A%20feature%20AND%20NOT%20subType%3A%20livestream&ruleContexts=iview_episodes&page=0&facets=%5B%5D&tagFilters="
+			}
+		]
+	}
+	```
 
 So `iview-proxy` disables it all, and locks down iView's search to the bare-minimum, keeping your data safe.
 
